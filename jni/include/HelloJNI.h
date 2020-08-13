@@ -1,0 +1,1 @@
+JNIEXPORT jstring Java_com_example_androidndk1_MainActivity_getMessage(JNIEnv *, jobject);
