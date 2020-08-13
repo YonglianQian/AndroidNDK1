@@ -14,8 +14,7 @@ public class DisplayMessageActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        AppCenter.start(getApplication(), "0748a395-56d6-4ae0-bda2-0efdf14b7dca",
-                Analytics.class, Crashes.class);
+
 
         setContentView(R.layout.activity_display_message);
 
