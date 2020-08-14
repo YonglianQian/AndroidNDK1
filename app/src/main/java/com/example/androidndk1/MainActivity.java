@@ -13,6 +13,8 @@ import com.microsoft.appcenter.AppCenter;
 import com.microsoft.appcenter.analytics.Analytics;
 import com.microsoft.appcenter.crashes.Crashes;
 
+import java.util.Date;
+
 public class MainActivity extends AppCompatActivity {
 
     // Used to load the 'native-lib' library on application startup.
@@ -37,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void sendMessage(View view){
+        Date d=new Date();
+        Analytics.trackEvent("button is clicked at "+ d.getTime());
         Intent intent = new Intent(this, DisplayMessageActivity.class);
         EditText editText = (EditText) findViewById(R.id.editText);
         String message = editText.getText().toString();
