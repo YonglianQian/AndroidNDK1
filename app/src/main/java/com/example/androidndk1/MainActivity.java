@@ -48,13 +48,16 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void sendMessage(View view){
-        SimpleDateFormat sdf=new SimpleDateFormat();
-        sdf.applyPattern("yyyy-MM-dd HH:mm:ss a");
-        Date d=new Date();
-        Analytics.trackEvent("button is clicked at "+sdf.format(d));
+
         Intent intent = new Intent(this, DisplayMessageActivity.class);
         EditText editText = (EditText) findViewById(R.id.editText);
         String message = editText.getText().toString();
+
+        SimpleDateFormat sdf=new SimpleDateFormat();
+        sdf.applyPattern("yyyy-MM-dd HH:mm:ss a");
+        Date d=new Date();
+        Analytics.trackEvent("button is clicked at "+sdf.format(d)+" Message: "+message);
+
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
     }
