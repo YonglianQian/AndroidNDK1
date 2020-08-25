@@ -40,13 +40,11 @@ public class MainActivity extends AppCompatActivity {
 //                }
 //            }
 //        });
-//        TextView textView=new TextView(this);
-//        textView.setText(getMessage());
 
         setContentView(R.layout.activity_main);
 
-        //TextView textView = findViewById(R.id.textView2);
-        //textView.setText(getMessage());
+        TextView textView = findViewById(R.id.textView2);
+        textView.setText(getMessage());
 
     }
     public void sendMessage(View view){
