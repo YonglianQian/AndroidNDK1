@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.microsoft.appcenter.AppCenter;
 import com.microsoft.appcenter.analytics.Analytics;
 import com.microsoft.appcenter.crashes.Crashes;
+import com.microsoft.appcenter.utils.async.AppCenterConsumer;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -29,14 +30,23 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         AppCenter.start(getApplication(), "0748a395-56d6-4ae0-bda2-0efdf14b7dca",
                 Analytics.class, Crashes.class);
-
+//        Crashes.getMinidumpDirectory().thenAccept(new AppCenterConsumer<String>() {
+//            @Override
+//            public void accept(String path) {
+//
+//                // Path is null when Crashes is disabled.
+//                if (path != null) {
+//                    setupNativeCrashesListener(path);
+//                }
+//            }
+//        });
 //        TextView textView=new TextView(this);
 //        textView.setText(getMessage());
 
         setContentView(R.layout.activity_main);
 
-        TextView textView = findViewById(R.id.textView2);
-        textView.setText(getMessage());
+        //TextView textView = findViewById(R.id.textView2);
+        //textView.setText(getMessage());
 
     }
     public void sendMessage(View view){
@@ -56,5 +66,6 @@ public class MainActivity extends AppCompatActivity {
      * which is packaged with this application.
      */
     public native String getMessage();
+    //public native void setupNativeCrashesListener(String path);
 
 }
