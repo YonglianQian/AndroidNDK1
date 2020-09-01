@@ -9,7 +9,8 @@ LOCAL_STATIC_LIBRARIES += breakpad_client
 
 include $(BUILD_SHARED_LIBRARY)
 
-//pay attention to the second path
+# pay attention to the second path
+
 ifneq ($(NDK_MODULE_PATH),)
   $(call import-module,google_breakpad)
 else
