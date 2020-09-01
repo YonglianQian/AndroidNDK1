@@ -22,7 +22,10 @@
 
 
 
-# For honour
+# For honour.
+# how to organize this struture. 1, copy the android.mk from the github android sample-app
+# 2, copy the src directory from the /src/src directory.
+# pay attention to the below line, specifying the local path relying on the src directory.
 
 
 LOCAL_PATH := $(call my-dir)
