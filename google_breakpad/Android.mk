@@ -20,7 +20,12 @@
 # The top Google Breakpad directory.
 # We assume this Android.mk to be under 'android/google_breakpad'
 
-LOCAL_PATH := $(call my-dir)/../..
+
+
+# For honour
+
+
+LOCAL_PATH := $(call my-dir)
 
 # Defube the client library module, as a simple static library that
 # exports the right include path / linker flags to its users.
